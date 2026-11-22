@@ -49,6 +49,12 @@ function Anime () {
     }
   }
 
+    function handleReset() {
+    setTerm("");
+    setShows([]);
+    setStatus("idle");
+  }
+
   return (
     <section>
       <h2 className="text-2xl font-semibold text-sky-300"> Anime</h2>
@@ -66,7 +72,14 @@ function Anime () {
             >
               Search
             </button>
-        </form>
+            <button
+              type="button"
+              onClick={handleReset}
+              className="rounded-lg bg-slate-600 px-4 py-2 font-semibold text-slate-300 hover:bg-slate-500"
+            >
+              Reset
+            </button>
+          </form>
 
         {status === "loading" && (
           <p className="mt-4 text-slate-300"> Searching...</p>
